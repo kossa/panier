@@ -42,4 +42,28 @@ class PanierFrontendHelper {
         return $str;
     }
 
+
+    public static function sendEmail($text = '')
+    {
+        $config = JFactory::getConfig();
+        $mailer = JFactory::getMailer();
+
+        $sender = array( 
+            $config->get( 'mailfrom' ),
+            $config->get( 'fromname' ) );
+        $mailer->setSender($sender);
+
+        $mailer->setSender(['hadjikouceyla@gmail.com']);
+
+        $mailer->setSubject('Nouvelle command');
+
+        $mailer->addRecipient($config->get( 'mailfrom' ));
+
+        $mailer->isHTML(true);
+        $mailer->Encoding = 'base64';
+        $mailer->setBody($text);
+
+        return $mailer->Send();
+    }
+
 }
