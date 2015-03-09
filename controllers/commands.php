@@ -26,4 +26,22 @@ class PanierControllerCommands extends PanierController
 		$model = parent::getModel($name, $prefix, array('ignore_request' => true));
 		return $model;
 	}
+
+    public function save()
+    {
+        $command         = json_encode($_POST);
+        
+        $app             = JFactory::getApplication();
+        $user_id         = JFactory::getUser()->id;
+        
+        // Object
+        $object          = new stdClass();
+        $object->user_id = $user_id;
+        $object->command = $command;
+        
+        // Get Model and save
+        $model           = $this->getModel('Commands');
+        $model->save($object);
+
+    }
 }

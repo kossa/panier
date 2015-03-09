@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @version     1.0.0
  * @package     com_panier
@@ -6,8 +7,20 @@
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  * @author      Kouceyla Hadji <hadjikouceyla@gmail.com> - http://www.behance.net/kossa
  */
-// no direct access
+// No direct access
 defined('_JEXEC') or die;
 
-?>
-<h1>Mes commandes</h1>
+jimport('joomla.application.component.view');
+
+/**
+ * View class for a list of Panier.
+ */
+class PanierViewBrochures extends JViewLegacy {
+
+    public function display($tpl = null) {
+        
+        parent::display($tpl);
+    }
+
+
+}

@@ -5,14 +5,18 @@ jQuery(document).ready(function($) {
 
     var devis = $('#demande-devis');
 
-   devis.find("a").click(
+    /*
+    |------------------------------------------------------------------------------------
+    | Click on active/disable button
+    |------------------------------------------------------------------------------------
+    */
+    devis.find("span.btn").click(
         function(){
             var _this = $(this),
                 ulParent = _this.closest("ul");
 
             if (_this.hasClass('active')) {
-                _this.removeClass('active');
-                return false;
+                return;
             };
 
             // Remove the current active class
@@ -20,7 +24,14 @@ jQuery(document).ready(function($) {
 
             // Add active class
             _this.addClass("active");
-            return false;
+            return;
         }
     );
+
+/*
+|------------------------------------------------------------------------------------
+| Functions
+|------------------------------------------------------------------------------------
+*/
+
 });
