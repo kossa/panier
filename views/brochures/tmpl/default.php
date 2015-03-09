@@ -8,7 +8,6 @@
  */
 // no direct access
 defined('_JEXEC') or die;
-var_dump($_POST)
 ?>
 
 <div class="container">

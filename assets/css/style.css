@@ -17,3 +17,7 @@ img{max-width: 100%}
 #demande-devis span.btn.active{opacity: 1;}
 #demande-devis ul label{position: relative;}
 #demande-devis ul input[type="radio"]{position: absolute;left: 0;top: 0;opacity: 0;  float: left; margin-right: -10px;}
+
+
+/*Table*/
+th{color: #fff;}

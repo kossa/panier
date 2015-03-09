@@ -28,9 +28,9 @@ $commands = $this->commands;
 <table class="table table-striped">
     <tr>
         <th>#</th>
-        <th>Nom command</th>
+        <th>Nom commande</th>
         <th>Detail</th>
-        <th>Action</th>
+        <th></th>
     </tr>
     <?php foreach ($commands as $key=>$command): ?>
         <?php $details = json_decode($command->command); ?>
