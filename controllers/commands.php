@@ -17,6 +17,8 @@ require_once JPATH_COMPONENT.'/controller.php';
  */
 class PanierControllerCommands extends PanierController
 {
+    private $urlPanier = 'index.php?option=com_panier&view=commands&Itemid=104';
+
 	/**
 	 * Proxy for getModel.
 	 * @since	1.6
@@ -42,6 +44,30 @@ class PanierControllerCommands extends PanierController
         // Get Model and save
         $model           = $this->getModel('Commands');
         $model->save($object);
+
+        $app->redirect($this->urlPanier);
+
+    }
+
+
+    public function delete()
+    {
+        $app     = JFactory::getApplication();
+        $jinput  = $app->input;
+        $id      = $jinput->get('id','', 'STRING');
+        $user_id = JFactory::getUser()->id;
+        $this->getModel('Commands')->delete($id, $user_id);
+
+        $app->redirect($this->urlPanier);
+    }
+
+    public function procedeCommand()
+    {
+        // Get my commands
+        $user_id = JFactory::getUser()->id;
+        $cmds = $this->getModel('Commands')->getMyCommands($user_id);
+
+        echo PanierFrontendHelper::prepareEmail($cmds);
 
     }
 }

@@ -30,8 +30,6 @@ class PanierController extends JControllerLegacy {
         }
 
 
-        require_once JPATH_COMPONENT . '/helpers/panier.php';
-
         $view = JFactory::getApplication()->input->getCmd('view', 'commands');
         JFactory::getApplication()->input->set('view', $view);
 

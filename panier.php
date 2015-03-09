@@ -14,6 +14,7 @@ jimport('joomla.application.component.controller');
 
 define('COMPONENT_PATH', JURI::base().'/components/com_panier');
 
+require_once JPATH_COMPONENT . '/helpers/panier.php';
 
 // Add CSS and JS
 $document = JFactory::getDocument();

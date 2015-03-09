@@ -11,4 +11,35 @@ defined('_JEXEC') or die;
 
 class PanierFrontendHelper {
     
+    public static function parseCommand($cmd='')
+    {
+        $str = '';
+
+        foreach ($cmd as $key => $value) {
+            if ($key != 'Titre_Command') {
+                $str .= str_replace('_', ' ', $key) . ": $value <br>";
+            }
+        }
+
+        return $str;
+    }
+
+    public static function prepareEmail($cmds='')
+    {
+        $str = '';
+
+        foreach ($cmds as $cmd) {
+            $details = json_decode($cmd->command);
+            foreach ($details as $key => $value) {
+                if ($key == 'Titre_Command') {
+                    $str .= "<h3>Titre Command N° $cmd->id : <em>$value</em></h3>";
+                }else{
+                    $str .= str_replace('_', ' ', $key) . ": $value <br>";
+                }
+            }
+        }
+
+        return $str;
+    }
+
 }

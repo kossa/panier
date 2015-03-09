@@ -32,4 +32,41 @@ class PanierModelCommands extends JModelList
 		return JFactory::getDbo()->insertObject('#__panier_command', $obj);
 	}
 	
+
+	public function getMyCommands($user_id)
+	{
+		$db = JFactory::getDBO();
+		$query = $db->getQuery(true);		
+		$query
+		    ->select('*')
+		    ->from($db->quoteName('#__panier_command'))
+		    ->where($db->quoteName('user_id') . ' = '. $user_id)
+		    ->where($db->quoteName('state') . ' = 0');
+		
+		$db->setQuery($query);
+		
+		return $db->loadObjectList();
+		
+	}
+
+
+	public function delete($id = 0, $user_id = 0)
+	{
+		$db = JFactory::getDBO();
+		$query = $db->getQuery(true);		
+
+		$conditions = array(
+		    $db->quoteName('id') . '=' . $id, 
+		    $db->quoteName('user_id') . ' = ' . $user_id,
+		);
+		 
+		$query->delete($db->quoteName('#__panier_command'));
+		$query->where($conditions);
+		 
+		$db->setQuery($query);
+		 
+		 
+		return $db->query();
+	}
+
 }
