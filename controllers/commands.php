@@ -63,15 +63,20 @@ class PanierControllerCommands extends PanierController
 
     public function procedeCommand()
     {
+        $app       = JFactory::getApplication();
+        
         // Get my commands
-        $user_id = JFactory::getUser()->id;
-        $cmds = $this->getModel('Commands')->getMyCommands($user_id);
-
+        $user_id   = JFactory::getUser()->id;
+        $model     = $this->getModel('Commands');
+        $cmds      = $model->getMyCommands($user_id);
+        
         $emailText = PanierFrontendHelper::prepareEmail($cmds);
 
+        $model->archiveCommands($user_id);
+        
         if(PanierFrontendHelper::sendEmail($emailText)){
             // Archive commands
-            
+            $model->archiveCommands($user_id);
             
             $app->redirect($this->urlPanier, 'Un email a été envoyé', 'success');
         }else{ // Error : email not sent :'(

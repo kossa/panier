@@ -32,11 +32,12 @@ class PanierFrontendHelper {
             $details = json_decode($cmd->command);
             foreach ($details as $key => $value) {
                 if ($key == 'Titre_Command') {
-                    $str .= "<h3>Titre Command N° $cmd->id : <em>$value</em></h3>";
+                    $str .= "<h3>Command N° $cmd->id : <em>$value</em></h3>";
                 }else{
-                    $str .= str_replace('_', ' ', $key) . ": $value <br>";
+                    $str .= "<b>" . str_replace('_', ' ', $key) . "</b>: $value <br>";
                 }
             }
+            $str .= '============================================';
         }
 
         return $str;

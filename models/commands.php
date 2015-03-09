@@ -65,8 +65,17 @@ class PanierModelCommands extends JModelList
 		 
 		$db->setQuery($query);
 		 
-		 
 		return $db->query();
 	}
 
+
+	public function archiveCommands($user_id)
+	{
+		$object = new stdClass();
+		$object->user_id = $user_id;
+		$object->state = 1;
+		$result = JFactory::getDbo()->updateObject('#__panier_command', $object, 'user_id');
+		
+		return $result;
+	}
 }
