@@ -11,7 +11,8 @@ img{max-width: 100%}
 
 
 /*demande-devis*/
-#demande-devis li{margin-bottom: 10px;}
+#demande-devis ul{list-style: none}
+#demande-devis li{margin-bottom: 10px;display: inline-block;margin-right: 5px;}
 #demande-devis span.btn{opacity: 0.6;}
 #demande-devis span.btn.disabled{opacity: 0.3;}
 #demande-devis span.btn.active{opacity: 1;}
@@ -20,4 +21,5 @@ img{max-width: 100%}
 
 
 /*Table*/
-th{color: #fff;}
+#mes-commandes th{color: #fff;background-color: #6d6969!important;}
+#mes-commandes a.cancel{float: right;margin-right: -5px;}

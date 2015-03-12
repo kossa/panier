@@ -66,19 +66,23 @@ class PanierControllerCommands extends PanierController
         $app       = JFactory::getApplication();
         
         // Get my commands
-        $user_id   = JFactory::getUser()->id;
+        $userObj   = JFactory::getUser();
+        $user_id   = $userObj->id;
         $model     = $this->getModel('Commands');
         $cmds      = $model->getMyCommands($user_id);
         
-        $emailText = PanierFrontendHelper::prepareEmail($cmds);
+        // Get email text
+        $emailText = PanierFrontendHelper::prepareEmail($cmds, $userObj);
 
+        // Archive the command
         $model->archiveCommands($user_id);
         
+        // Send the email
         if(PanierFrontendHelper::sendEmail($emailText)){
             // Archive commands
             $model->archiveCommands($user_id);
             
-            $app->redirect($this->urlPanier, 'Un email a été envoyé', 'success');
+            $app->redirect($this->urlPanier, 'Votre command a été bien enregisté', 'success');
         }else{ // Error : email not sent :'(
             $app->redirect($this->urlPanier, 'Erreur Email', 'error');
         }

@@ -25,13 +25,13 @@ defined('_JEXEC') or die;
               <div class="panel-body">
                 <div class="form-group">
                   <label>Nombre de pages :</label>
-                  <input type="text" class="form-control" name="Nombre de pages" placeholder="">
+                  <input type="text" class="form-control" name="Nombre de pages" placeholder="" required>
                 </div>
               </div>
               <div class="panel-body">
                 <div class="form-group">
                   <label>Quantité :</label>
-                  <input type="text" class="form-control" name="Quantité" placeholder="">
+                  <input type="text" class="form-control" name="Quantité" placeholder="" required>
                 </div>
               </div>
             </div>
@@ -46,11 +46,11 @@ defined('_JEXEC') or die;
               <div class="panel-body">
                 <div class="form-group">
                   <label>Fermé :</label>
-                  <input type="text" class="form-control" name="Fermé" placeholder="Largeur x Hauteur" pattern="([1,2]\d|[3][0-2])x([1-2]\d|[3][0-2])" >
+                  <input type="text" class="form-control" name="Fermé" placeholder="Largeur x Hauteur" pattern="([1,2]\d|[3][0-2])x([1-2]\d|[3][0-2])" required>
                 </div>
                 <div class="form-group">
                   <label>Ouvert :</label>
-                  <input type="text" class="form-control" name="Ouvert" placeholder="Largeur x Hauteur" pattern="([1,2]\d|[3][0-2])x([1-2]\d|[3][0-2])" >
+                  <input type="text" class="form-control" name="Ouvert" placeholder="Largeur x Hauteur" pattern="([1,2]\d|[3][0-2])x([1-2]\d|[3][0-2])" required>
                 </div>
                 <p class="help-block info"><small><i>La largeur et la Hauteur doit etre entre 10 et 32, ex : 10x25</i></small></p>
               </div>
@@ -67,25 +67,25 @@ defined('_JEXEC') or die;
                 <ul data-label="Papier" class="list-inline">
                   <li>
                     <label>
-                      <input type="radio" name="Couverture - Papier" value="200gr" ><!-- required -->
+                      <input type="radio" name="Couverture - Papier" value="200gr" required><!-- required -->
                       <span class="btn btn-info">200gr</span>
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="radio" name="Couverture - Papier" value="250gr" ><!-- required -->
+                      <input type="radio" name="Couverture - Papier" value="250gr" required><!-- required -->
                       <span class="btn btn-info">250gr</span>
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="radio" name="Couverture - Papier" value="300gr" ><!-- required -->
+                      <input type="radio" name="Couverture - Papier" value="300gr" required><!-- required -->
                       <span class="btn btn-info">300gr</span>
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="radio" name="Couverture - Papier" value="350gr" ><!-- required -->
+                      <input type="radio" name="Couverture - Papier" value="350gr" required><!-- required -->
                       <span class="btn btn-info">350gr</span>
                     </label>
                   </li>
@@ -96,13 +96,13 @@ defined('_JEXEC') or die;
                   <li>
                     <label>
                       <span class="btn btn-info">Recto</span>
-                      <input type="radio" name="Couverture - Impression" value="Recto" ><!-- required -->
+                      <input type="radio" name="Couverture - Impression" value="Recto" required><!-- required -->
                     </label>
                   </li>
                   <li>
                     <label>
                       <span class="btn btn-info">Recto/Verso</span>
-                      <input type="radio" name="Couverture - Impression" value="Recto/Verso" ><!-- required -->
+                      <input type="radio" name="Couverture - Impression" value="Recto/Verso" required><!-- required -->
                     </label>
                   </li>
                   <li>
@@ -117,31 +117,31 @@ defined('_JEXEC') or die;
                 <ul data-label="Pelliculage" class="list-inline">
                   <li>
                     <label>
-                      <input type="radio" name="Couverture - Pelliculage" value="Sans pelliculage" > <!-- required -->
+                      <input type="radio" name="Couverture - Pelliculage" value="Sans pelliculage" required> <!-- required -->
                       <span class="btn btn-info">Sans pelliculage</span>
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="radio" name="Couverture - Pelliculage" value="Pelliculage Brillant (Recto)" > <!-- required -->
+                      <input type="radio" name="Couverture - Pelliculage" value="Pelliculage Brillant (Recto)" required> <!-- required -->
                       <span class="btn btn-info">Pelliculage Brillant (Recto)</span>
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="radio" name="Couverture - Pelliculage" value="Pelliculage Brillant (Recto/Verso)" > <!-- required -->
+                      <input type="radio" name="Couverture - Pelliculage" value="Pelliculage Brillant (Recto/Verso)" required> <!-- required -->
                       <span class="btn btn-info">Pelliculage Brillant (Recto/Verso)</span>
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="radio" name="Couverture - Pelliculage" value="Pelliculage Mat  (Recto)" > <!-- required -->
+                      <input type="radio" name="Couverture - Pelliculage" value="Pelliculage Mat  (Recto)" required> <!-- required -->
                       <span class="btn btn-info">Pelliculage Mat  (Recto)</span>
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="radio" name="Couverture - Pelliculage" value="Pelliculage Mat  (Recto/Verso)" > <!-- required -->
+                      <input type="radio" name="Couverture - Pelliculage" value="Pelliculage Mat  (Recto/Verso)" required> <!-- required -->
                       <span class="btn btn-info">Pelliculage Mat  (Recto/Verso)</span>
                     </label>
                   </li>
@@ -160,31 +160,31 @@ defined('_JEXEC') or die;
                 <ul data-label="Papier" class="list-inline">
                   <li>
                     <label>
-                      <input type="radio" name="Interieur - Papier" value="100gr" > <!-- required -->
+                      <input type="radio" name="Interieur - Papier" value="100gr" required> <!-- required -->
                       <span class="btn btn-info">100gr</span>
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="radio" name="Interieur - Papier" value="130gr" > <!-- required -->
+                      <input type="radio" name="Interieur - Papier" value="130gr" required> <!-- required -->
                       <span class="btn btn-info">130gr</span>
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="radio" name="Interieur - Papier" value="150gr" > <!-- required -->
+                      <input type="radio" name="Interieur - Papier" value="150gr" required> <!-- required -->
                       <span class="btn btn-info">150gr</span>
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="radio" name="Interieur - Papier" value="200gr" > <!-- required -->
+                      <input type="radio" name="Interieur - Papier" value="200gr" required> <!-- required -->
                       <span class="btn btn-info">200gr</span>
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="radio" name="Interieur - Papier" value="250gr" > <!-- required -->
+                      <input type="radio" name="Interieur - Papier" value="250gr" required> <!-- required -->
                       <span class="btn btn-info">250gr</span>
                     </label>
                   </li>
@@ -194,25 +194,25 @@ defined('_JEXEC') or die;
                 <ul data-label="Impression" class="list-inline">
                   <li>
                     <label>
-                      <input type="radio" name="Interieur - Impression" value="Quadrichromie (Recto)" > <!-- required -->
+                      <input type="radio" name="Interieur - Impression" value="Quadrichromie (Recto)" required> <!-- required -->
                       <span class="btn btn-info">Quadrichromie (Recto)</span>
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="radio" name="Interieur - Impression" value="Quadrichromie (Recto/Verso)" > <!-- required -->
+                      <input type="radio" name="Interieur - Impression" value="Quadrichromie (Recto/Verso)" required> <!-- required -->
                       <span class="btn btn-info">Quadrichromie (Recto/Verso)</span>
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="radio" name="Interieur - Impression" value="Noir (Recto)" > <!-- required -->
+                      <input type="radio" name="Interieur - Impression" value="Noir (Recto)" required> <!-- required -->
                       <span class="btn btn-info">Noir (Recto)</span>
                     </label>
                   </li>
                   <li>
                     <label>
-                      <input type="radio" name="Interieur - Impression" value="Noir (Recto/Verso)" > <!-- required -->
+                      <input type="radio" name="Interieur - Impression" value="Noir (Recto/Verso)" required> <!-- required -->
                       <span class="btn btn-info">Noir (Recto/Verso)</span>
                     </label>
                   </li>
